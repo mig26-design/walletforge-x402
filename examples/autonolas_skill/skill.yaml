@@ -1,0 +1,19 @@
+name: walletforge_x402
+author: walletforge
+version: 0.1.0
+type: skill
+description: WalletForge x402 fetch-markdown skill stub
+license: MIT
+aea_version: '>=1.0.0, <3.0.0'
+behaviours:
+  fetch_markdown:
+    args:
+      tick_interval: 30.0
+      target_url: https://example.com
+      max_chars: 50000
+    class_name: FetchMarkdownBehaviour
+handlers: {}
+models: {}
+dependencies:
+  walletforge-x402:
+    version: '>=0.1.0'

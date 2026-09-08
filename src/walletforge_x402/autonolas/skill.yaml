@@ -1,0 +1,31 @@
+name: walletforge_x402
+author: walletforge
+version: 0.1.0
+type: skill
+description: Call WalletForge x402 fetch-markdown / normalize via shared EIP-3009 buyer.
+license: MIT
+aea_version: '>=1.0.0, <3.0.0'
+fingerprint: {}
+fingerprint_ignore_patterns: []
+connections: []
+contracts: []
+protocols: []
+skills: []
+behaviours:
+  fetch_markdown:
+    args:
+      tick_interval: 30.0
+      target_url: https://example.com
+      max_chars: 50000
+    class_name: FetchMarkdownBehaviour
+handlers: {}
+models:
+  walletforge_params:
+    args:
+      base_url: https://api.walletforge.app
+      # BUYER_PRIVATE_KEY must be provided via environment / secret store — never YAML.
+    class_name: WalletForgeParams
+dependencies:
+  walletforge-x402:
+    version: '>=0.1.0'
+is_abstract: false

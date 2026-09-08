@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "walletforge-x402"
+version = "0.1.0"
+description = "x402 V2 buyer + LangChain / Coinbase AgentKit / Autonolas adapters for WalletForge API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "WalletForge" }]
+keywords = ["x402", "usdc", "langchain", "agentkit", "autonolas", "walletforge"]
+dependencies = [
+  "httpx>=0.27",
+  "eth-account>=0.11",
+  "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+langchain = [
+  "langchain-core>=0.2",
+]
+agentkit = [
+  "coinbase-agentkit>=0.4",
+  "pydantic>=2.0",
+]
+dev = [
+  "pytest>=8.0",
+  "pytest-httpx>=0.30",
+  "respx>=0.21",
+]
+
+[project.urls]
+Homepage = "https://api.walletforge.app"
+Discovery = "https://api.walletforge.app/.well-known/agent.json"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/walletforge_x402"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/walletforge_x402", "README.md", "examples", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
