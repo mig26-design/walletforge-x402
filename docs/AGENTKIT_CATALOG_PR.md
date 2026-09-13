@@ -57,7 +57,7 @@ Buyer implementation: `walletforge_x402.buyer.X402Buyer` (echoes x402 `extension
      -H 'Content-Type: application/json' \
      -d '{"url":"https://example.com"}'
    ```
-   Expect **402**, `accepts[0].amount == "50000"`, `payTo == 0xb5F5a86Df5F78ed78920f74a1D7f26368F708E94`.
+   Expect **402**, `accepts[0].amount == "50000"`, `payTo == 0x405b88f183cb9fbb14e20b08a167917aa66e201c`.
 3. Install package + set `BUYER_PRIVATE_KEY` with ~0.10 Base USDC.
 4. Run:
    ```python
@@ -74,7 +74,7 @@ Buyer implementation: `walletforge_x402.buyer.X402Buyer` (echoes x402 `extension
 | Date | 2026-09-08 |
 | Amount | **0.05 USDC** (`50000`) |
 | From | `0x3f6023854de3E58049A352D99D4B5Ec20A761136` |
-| To | `0xb5F5a86Df5F78ed78920f74a1D7f26368F708E94` |
+| To | `0x405b88f183cb9fbb14e20b08a167917aa66e201c` |
 | Tx | [`0x5cebbe810ca7208bc85ab0231c59c03dfee967ad3de30f72ee4a753795677afc`](https://basescan.org/tx/0x5cebbe810ca7208bc85ab0231c59c03dfee967ad3de30f72ee4a753795677afc) |
 | Client | `walletforge-x402` → `api.walletforge.app` |
 | HTTP | 200, Example Domain markdown |

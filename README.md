@@ -13,7 +13,7 @@ Python **x402 V2 buyer** and adapters for [LangChain](https://python.langchain.c
 |--|--|
 | Network | Base mainnet `eip155:8453` |
 | USDC | `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` |
-| payTo | `0xb5F5a86Df5F78ed78920f74a1D7f26368F708E94` |
+| payTo | `0x405b88f183cb9fbb14e20b08a167917aa66e201c` |
 | Facilitator | `https://facilitator.payai.network` |
 | Discovery | [`/.well-known/agent.json`](https://api.walletforge.app/.well-known/agent.json) · [`/.well-known/x402.json`](https://api.walletforge.app/.well-known/x402.json) |
 

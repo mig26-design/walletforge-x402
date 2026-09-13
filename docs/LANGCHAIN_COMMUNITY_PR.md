@@ -64,7 +64,7 @@ tools = walletforge_tools()
 ## Proof of live paid settle
 
 - Tx: [`0x5cebbe810ca7208bc85ab0231c59c03dfee967ad3de30f72ee4a753795677afc`](https://basescan.org/tx/0x5cebbe810ca7208bc85ab0231c59c03dfee967ad3de30f72ee4a753795677afc)
-- 0.05 USDC Base → `0xb5F5a86Df5F78ed78920f74a1D7f26368F708E94`
+- 0.05 USDC Base → `0x405b88f183cb9fbb14e20b08a167917aa66e201c`
 - Payer: `0x3f6023854de3E58049A352D99D4B5Ec20A761136`
 - Client package self-test 2026-09-08 against `https://api.walletforge.app`
 

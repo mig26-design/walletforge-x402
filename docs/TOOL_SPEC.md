@@ -9,7 +9,7 @@
 | Protocol | x402 V2 (`exact`) |
 | Network | Base mainnet `eip155:8453` |
 | Settlement asset | USDC `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` |
-| Recipient (`payTo`) | `0xb5F5a86Df5F78ed78920f74a1D7f26368F708E94` |
+| Recipient (`payTo`) | `0x405b88f183cb9fbb14e20b08a167917aa66e201c` |
 | Facilitator | `https://facilitator.payai.network` |
 | Seller custody | None (non-custodial; no seller private key) |
 

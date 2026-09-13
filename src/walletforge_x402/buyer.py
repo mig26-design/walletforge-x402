@@ -27,7 +27,7 @@ from eth_account.messages import encode_typed_data
 DEFAULT_BASE_URL = "https://api.walletforge.app"
 DEFAULT_NETWORK = "eip155:8453"
 DEFAULT_ASSET = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
-DEFAULT_PAY_TO = "0xb5F5a86Df5F78ed78920f74a1D7f26368F708E94"
+DEFAULT_PAY_TO = "0x405b88f183cb9fbb14e20b08a167917aa66e201c"
 DEFAULT_FACILITATOR = "https://facilitator.payai.network"
 
 # Atomic USDC amounts (6 decimals)
