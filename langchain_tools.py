@@ -123,7 +123,7 @@ class BaseWalletForgeTool(BaseTool):
 
 class WalletForgeMarkdownTool(BaseWalletForgeTool):
     name: str = "walletforge_fetch_markdown"
-    description: str = "Scrapes a live public webpage and converts the content into clean markdown. Costs 0.05 USDC settled on Base."
+    description: str = "Scrapes a live public webpage and converts the content into clean markdown. Costs 0.003 USDC settled on Base."
     args_schema: Type[BaseModel] = FetchMarkdownInput
 
     def _run(self, url: str) -> str:
@@ -132,8 +132,43 @@ class WalletForgeMarkdownTool(BaseWalletForgeTool):
 
 class WalletForgeNormalizeTool(BaseWalletForgeTool):
     name: str = "walletforge_normalize_text"
-    description: str = "Parses unstructured text and extracts contacts, emails, and entities into JSON. Costs 0.01 USDC settled on Base."
+    description: str = "Parses unstructured text and extracts contacts, emails, and entities into JSON. Costs 0.001 USDC settled on Base."
     args_schema: Type[BaseModel] = NormalizeTextInput
 
     def _run(self, text: str) -> str:
         return self._execute_paid_call("https://api.walletforge.app/v1/normalize", {"text": text})
+
+
+
+class WalletBalanceInput(BaseModel):
+    address: str = Field(description="Base address (0x...) to query for ETH and USDC balances")
+
+
+class UsdcTransfersInput(BaseModel):
+    address: str = Field(description="Base address (0x...) whose recent USDC transfers to list")
+    limit: int = Field(default=10, description="Max transfers to return (1-25)")
+
+
+class WalletForgeWalletBalanceTool(BaseWalletForgeTool):
+    name: str = "walletforge_wallet_balance"
+    description: str = "Returns Base ETH and USDC balances for an address. Costs 0.002 USDC settled on Base."
+    args_schema: Type[BaseModel] = WalletBalanceInput
+
+    def _run(self, address: str) -> str:
+        return self._execute_paid_call(
+            "https://api.walletforge.app/v1/wallet/balance",
+            {"address": address},
+        )
+
+
+class WalletForgeUsdcTransfersTool(BaseWalletForgeTool):
+    name: str = "walletforge_usdc_transfers"
+    description: str = "Lists recent Base USDC transfers for an address. Costs 0.002 USDC settled on Base."
+    args_schema: Type[BaseModel] = UsdcTransfersInput
+
+    def _run(self, address: str, limit: int = 10) -> str:
+        lim = max(1, min(int(limit or 10), 25))
+        return self._execute_paid_call(
+            "https://api.walletforge.app/v1/wallet/usdc-transfers",
+            {"address": address, "limit": lim},
+        )

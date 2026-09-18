@@ -3,5 +3,11 @@
 Production-ready LangChain tools and Coinbase AgentKit action providers for x402 micropayments on Base.
 
 ## Features
-- walletforge_fetch_markdown: Web scraping settled on Base (0.05 USDC)
-- walletforge_normalize_text: Text normalization settled on Base (0.01 USDC)
+- `walletforge_normalize_text` — 0.001 USDC
+- `walletforge_fetch_markdown` — 0.003 USDC
+- `walletforge_wallet_balance` — 0.002 USDC
+- `walletforge_usdc_transfers` — 0.002 USDC
+
+`payTo`: `0x405b88f183cb9fbb14e20b08a167917aa66e201c` · network `eip155:8453`
+
+See [docs/TOOL_SPEC.md](docs/TOOL_SPEC.md) and https://api.walletforge.app/llms.txt
